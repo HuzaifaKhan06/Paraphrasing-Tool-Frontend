@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+<link rel="stylesheet" href="CSS/buyPlan.css">
+</head>
+<body>
+
+    <div class="pricing-card-container">
+        <div class="pricing-card" id="freeCard">
+            <img src="img/logo.png" alt="Free Image">
+            <h2>Free Plan</h2>
+            <p><span class="checkTick">&#10004;</span>Basic features for free</p>
+            <p><span class="checkTick">&#10004;</span>You can only use 3 times a day</p>
+            <p><span class="checkTick">&#10004;</span>In the free plan, </p>
+            <p>there may be some errors</p>
+            <button onclick="selectPlan('free')">Get Free</button>
+        </div>
+    
+        <div class="pricing-card" id="premiumCard">
+            <img src="img/logo.png" alt="Premium Image">
+            <h2>Premium Plan</h2>
+            <p><span class="checkTick">&#10004;</span>Unlock advanced features</p>
+            <p><span class="checkTick">&#10004;</span>No time limit</p>
+            <p><span class="checkTick">&#10004;</span>Correct and accurate data</p>
+            <p>Only <span class="cross">&#10007;</span> <del>$30</del> <span class="checkTick">&#10004;</span>$19 per month</p>
+            <button onclick="selectPlan('premium')">Buy Premium</button>
+        </div>
+    </div>
+
+<form id="pricingForm" action="process.php" method="post">
+    <input type="hidden" id="selectedPlan" name="selectedPlan" value="">
+</form>
+
+<script>
+    function selectPlan(plan) {
+        document.getElementById('selectedPlan').value = plan;
+        document.getElementById('pricingForm').submit();
+    }
+</script>
+
+</body>
+</html>
